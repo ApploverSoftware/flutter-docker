@@ -42,7 +42,7 @@ ADD https://dl.google.com/android/repository/sdk-tools-linux-${VERSION_SDK_TOOLS
 RUN unzip /tools.zip -d /sdk && rm -rf /tools.zip
 RUN git clone https://github.com/flutter/flutter.git -b stable
 RUN mkdir -p $HOME/.android && touch $HOME/.android/repositories.cfg
-RUN - ls -Ra | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
+RUN ls -Ra | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
 
 ENV PATH "$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$FLUTTER_HOME/tools/bin"
 
